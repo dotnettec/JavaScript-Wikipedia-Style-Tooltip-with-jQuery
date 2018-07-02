@@ -1,0 +1,248 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; CHARSET=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Example- wikisummary.js</title>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <!-- Code Highlighter -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+    <!-- wikisummary.js -->
+    <link href="assets/wikisummary.min.css?V2" rel="stylesheet" />
+    <script src="assets/wikisummary.min.js?V2"></script>
+
+    <!-- Include tippy -->
+    <script src="https://unpkg.com/tippy.js@2.2.3/dist/tippy.all.min.js"></script>
+
+    <!-- Include nanoscroller -->
+    <script src="assets/jquery.nanoscroller.min.js"></script>
+    <!-- Demo CSS -->
+    <style type="text/css">
+        h1 {
+            padding: 30px 0 20px;
+        }
+
+        h4 {
+            margin-top: 40px;
+        }
+
+        .row {
+            margin-top: 10px;
+        }
+    </style>
+
+</head>
+<body>
+
+    <a class="float-right btn" onclick="window.close();" href="#">x</a>
+
+    <div class="clearfix"></div>
+
+    <div class="container">
+        <h1>jQuery Wikipedia Tooltip Plugin for Texts and Keywords using wikisummary.js</h1>
+
+        <p>These Examples show how wikisummary.js can be used.</p>
+
+
+        <h4>Simple Example</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <p>In this Example wikisummary.js is loaded without any attributes.</p>
+
+                <pre><code>
+    span class="wikisummary" .net /span
+
+    script type="text/javascript"
+    /* Initialize wikisummary.js */
+    wikisummary.init();
+    /script
+</code></pre>
+            </div>
+            <div class="col-md-6">
+
+                <!-- wikisummary.js Element -->
+                <strong>Hover with your Mouse (or touch) on following Text</strong><br /><br />
+                <span class="wikisummary">.net</span>
+            </div>
+        </div>
+
+        <h4>Themes</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <p>In this Example wikisummary.js is loaded without any attributes.</p>
+
+                <pre><code> span class="wikisummary" data-theme="default" Computer /span 
+
+ span class="wikisummary" data-theme="translucent" Web /span 
+
+ span class="wikisummary" data-theme="light" Internet /span 
+
+ script type="text/javascript" 
+	/* Initialize wikisummary.js */
+	wikisummary.init();
+ /script </code></pre>
+            </div>
+            <div class="col-md-6">
+
+                <!-- wikisummary.js Element -->
+                <strong>Hover over the different Themes.</strong><br /><br />
+                <span class="wikisummary">Computer</span> <span class="text-muted small">(default)</span><br /><br />
+                <span class="wikisummary" data-theme="translucent">Web</span> <span class="text-muted small">(translucent)</span><br /><br />
+                <span class="wikisummary" data-theme="light">Internet</span> <span class="text-muted small">(light)</span>
+            </div>
+        </div>
+
+        <h4>Animations</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <p>In this Example wikisummary.js is loading the Tooltip with different Animations. (Image are hidden for better Experience on small Devices)</p>
+
+                <pre><code> div class="wikisummary" data-animation="shift-away" Animation /div 
+				
+ div class="wikisummary" data-animation="shift-toward" Animation /div 
+
+ div class="wikisummary" data-animation="fade" Animation /div 
+
+ div class="wikisummary" data-animation="perspective" Animation /div 
+
+ div class="wikisummary" data-animation="scale" Animation /div 
+
+ script type="text/javascript" 
+	/* Initialize wikisummary.js */
+	wikisummary.init({
+		config: {
+			image: false;
+		}
+	});
+ /script </code></pre>
+            </div>
+            <div class="col-md-6">
+
+                <!-- wikisummary.js Element -->
+                <span class="wikisummary" data-animation="shift-away" data-image="false">Animation</span> <span class="text-muted small">(shift-away)</span><br /><br />
+                <span class="wikisummary" data-animation="shift-toward" data-image="false">Animation</span> <span class="text-muted small">(shift-toward)</span><br /><br />
+                <span class="wikisummary" data-animation="fade" data-image="false">Animation</span> <span class="text-muted small">(fade)</span><br /><br />
+                <span class="wikisummary" data-animation="perspective" data-image="false">Animation</span> <span class="text-muted small">(perspective)</span><br /><br />
+                <span class="wikisummary" data-animation="scale" data-image="false">Animation</span> <span class="text-muted small">(scale)</span>
+            </div>
+        </div>
+
+        <h4>Delay &amp; Duration</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <p>In this Example wikisummary.js is loading the Tooltip with a Delay and Duration for Animation.</p> 
+
+                <pre><code> div class="wikisummary" data-delay="500,500" delay /div 
+				
+ div class="wikisummary" data-duration="500" duration /div 
+
+ script type="text/javascript" 
+	/* Initialize wikisummary.js */
+	wikisummary.init();
+ /script </code></pre>
+            </div>
+            <div class="col-md-6">
+
+                <!-- wikisummary.js Element -->
+                <span class="wikisummary" data-delay="500,500">Delay</span> <span class="text-muted small">(500 Miliseconds)</span><br /><br />
+                <span class="wikisummary" data-duration="500">Duration</span> <span class="text-muted small">(500 Miliseconds)</span><br /><br />
+            </div>
+        </div>
+
+        <h4>Languages</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <p>In this Example wikisummary.js is loading the Tooltip in different Languages.</p>
+
+                <pre><code> div class="wikisummary" data-language="de" JavaScript /div 
+				
+ div class="wikisummary" data-language="it" JavaScript /div 
+
+ div class="wikisummary" data-language="fr" JavaScript /div 
+
+ script type="text/javascript" 
+	/* Initialize wikisummary.js */
+	wikisummary.init();
+ /script </code></pre>
+            </div>
+            <div class="col-md-6">
+
+                <!-- wikisummary.js Element -->
+                <span class="wikisummary" data-language="de">JavaScript</span> <span class="text-muted small">de</span><br /><br />
+                <span class="wikisummary" data-language="it">JavaScript</span> <span class="text-muted small">it</span><br /><br />
+                <span class="wikisummary" data-language="fr">JavaScript</span> <span class="text-muted small">fr</span>
+            </div>
+        </div>
+
+        <h4>Callbacks</h4>
+        <div class="row">
+            <div class="col-md-6">
+                <p>In this Example wikisummary.js is calling Functions on Events.</p>
+
+                <pre><code> div class="wikisummary" data-onshow="onShow" data-onshown="onShown" data-onhide="onHide" data-onhidden="onHidden" Callback /div 
+
+ script type="text/javascript" 
+	/* Define Functions for Callbacks */
+	function onShow(element) {
+		console.log("show");
+	}
+	function onShown(element) {
+		console.log("shown");
+	}
+	function onHide(element) {
+		console.log("hide");
+	}
+	function onHidden(element) {
+		console.log("hidden");
+	}
+
+	/* Initialize wikisummary.js */
+	wikisummary.init();
+ /script </code></pre>
+            </div>
+            <div class="col-md-6">
+
+                <!-- wikisummary.js Element -->
+                <span class="wikisummary" data-onshow="onShow" data-onshown="onShown" data-onhide="onHide" data-onhidden="onHidden">Callback</span>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        /* Initialize YoTuP */
+        wikisummary.init();
+
+        /* Callback Functions */
+        function onShow(element) {
+            console.log("show");
+        }
+        function onShown(element) {
+            console.log("shown");
+        }
+        function onHide(element) {
+            console.log("hide");
+        }
+        function onHidden(element) {
+            console.log("hidden");
+        }
+
+        /* Just for the Demo (Code Highlighter) */
+        $('pre code').each(function (i, block) {
+            hljs.highlightBlock(block);
+        });
+
+    </script>
+
+</body>
+</html>
